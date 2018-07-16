@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start|center_vertical"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/len_56"
+    android:paddingStart="@dimen/len_8"
+    android:paddingTop="@dimen/len_8">
+
+    <com.thxy.common.widget.PortraitView
+        android:id="@+id/pv_user_chat_cell"
+        android:layout_width="@dimen/len_48"
+        android:layout_height="@dimen/len_48"
+        android:padding="1px"
+        android:paddingEnd="@dimen/len_8"
+        android:src="@mipmap/ic_launcher_round"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="1dp"
+        tools:ignore="RtlSymmetry" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_chat_content"
+        android:padding="@dimen/len_8">
+
+        <TextView
+            android:id="@+id/tv_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/len_24"
+            android:text="哈哈"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+
+</LinearLayout>

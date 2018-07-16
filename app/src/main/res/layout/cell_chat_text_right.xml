@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:orientation="horizontal"
+    android:paddingEnd="@dimen/len_8"
+    android:paddingTop="@dimen/len_8"
+    tools:ignore="RtlSymmetry">
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/len_8">
+
+        <ProgressBar
+            android:id="@+id/pb_user_chat_cell"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:padding="1px"
+            android:visibility="gone" />
+
+        <ImageButton
+            android:id="@+id/iv_user_chat_send_failed"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_message_error"
+            android:tint="@color/colorAccent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+        <TextView
+            android:layout_margin="@dimen/len_2"
+            android:id="@+id/tv_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start|top"
+            android:minHeight="@dimen/len_24"
+            android:text="哈哈"
+            android:maxWidth="@dimen/len_256"
+            android:background="@drawable/bg_chat_right"
+            android:padding="@dimen/len_10"
+            android:paddingEnd="@dimen/len_16"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/white" />
+
+    <com.thxy.common.widget.PortraitView
+        android:paddingTop="@dimen/len_8"
+        android:layout_gravity="top"
+        android:id="@+id/pv_user_chat_cell"
+        android:layout_width="@dimen/len_40"
+        android:layout_height="@dimen/len_40"
+        android:padding="1px"
+        android:src="@mipmap/ic_launcher_round"
+        app:civ_border_color="@color/colorPrimary"
+        app:civ_border_width="1dp"
+     />
+
+
+</LinearLayout>

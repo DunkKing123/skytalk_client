@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.thxy.common.widget.FixWindowsLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:background="@color/windowsBackground">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/Toolbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/back_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/title_active_details"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_18" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:id="@+id/SmartRefreshLayout"
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:layout_height="0dp">
+        <android.support.v4.widget.NestedScrollView
+            android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <include layout="@layout/cell_active_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </include>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+            <android.support.v7.widget.RecyclerView
+                android:paddingTop="@dimen/len_8"
+                android:id="@+id/recycler_comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+                <com.thxy.common.widget.EmptyView
+                    android:id="@+id/empty_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                </com.thxy.common.widget.EmptyView>
+                </FrameLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_500" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white_alpha_224"
+            android:elevation="@dimen/len_2"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:outlineProvider="bounds"
+            android:padding="1dp"
+            tools:targetApi="lollipop">
+
+            <ImageView
+                android:id="@+id/comment_emoji"
+                android:layout_width="@dimen/len_24"
+                android:layout_height="@dimen/len_24"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/len_8"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_emoji"
+                android:tint="@color/colorPrimary" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/comment_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:lineSpacingExtra="0dp"
+                    android:lineSpacingMultiplier="1"
+                    android:maxHeight="@dimen/len_96"
+                    android:minHeight="@dimen/len_44"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/textSecond" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginBottom="@dimen/len_8"
+                    android:background="@color/colorPrimary">
+                </View>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/comment_send"
+                android:layout_width="@dimen/len_24"
+                android:layout_height="@dimen/len_24"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/len_8"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_send"
+                android:tint="@color/colorPrimary" />
+        </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_300" />
+</com.thxy.common.widget.FixWindowsLayout>

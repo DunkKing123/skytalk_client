@@ -1,0 +1,144 @@
+<com.thxy.common.widget.FixWindowsLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowsBackground"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.thxy.skytalk_client.fragment.chat.UserChatFragment">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_user_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/side_nav_bar"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:layout_collapseMode="parallax">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar_chat_user"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/len_128"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleGravity="bottom|center_horizontal"
+                app:expandedTitleMarginBottom="@dimen/len_8"
+                app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                app:title="啊啊啊啊啊啊啊">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar_user_chat"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_marginTop="@dimen/Toolbar_padding_top"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                </android.support.v7.widget.Toolbar>
+
+                <com.thxy.common.widget.PortraitView
+                    android:id="@+id/pv_user_chat"
+                    android:layout_width="@dimen/len_48"
+                    android:layout_height="@dimen/len_48"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/len_16"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_launcher_round"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="1dp"
+                    app:layout_collapseMode="none"
+                    app:layout_collapseParallaxMultiplier="0.3" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_user_chat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </android.support.v7.widget.RecyclerView>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_500" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white_alpha_224"
+        android:elevation="@dimen/len_2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:outlineProvider="bounds"
+        android:padding="1dp"
+        tools:targetApi="lollipop">
+
+        <ImageView
+            android:id="@+id/chat_emoji"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/len_8"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_emoji"
+            android:tint="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/chat_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:lineSpacingExtra="0dp"
+                android:lineSpacingMultiplier="1"
+                android:maxHeight="@dimen/len_96"
+                android:minHeight="@dimen/len_44"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/textSecond" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginBottom="@dimen/len_8"
+                android:background="@color/colorPrimary">
+            </View>
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/chat_send"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/len_8"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/sel_send"
+            android:tint="@color/colorPrimary" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_300" />
+</com.thxy.common.widget.FixWindowsLayout>

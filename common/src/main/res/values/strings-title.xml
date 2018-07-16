@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_select_gallery">选择照片</string>
+    <string name="title_assist_permissions">授予权限</string>
+
+</resources>

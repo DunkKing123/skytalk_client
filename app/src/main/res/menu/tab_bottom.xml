@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_interaction"
+        android:icon="@drawable/ic_interaction"
+        android:title="@string/action_interaction"
+         />
+    <item
+        android:id="@+id/nav_contacts"
+        android:icon="@drawable/ic_contact"
+        android:title="@string/action_contacts"
+        />
+    <item
+        android:id="@+id/nav_active"
+        android:icon="@drawable/ic_active"
+        android:title="@string/action_active"
+        />
+
+</menu>

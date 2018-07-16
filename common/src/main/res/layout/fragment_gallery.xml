@@ -1,0 +1,39 @@
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".widget.media.GalleryFragment"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:divider="@null"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            app:title="@string/title_select_gallery"
+            tools:targetApi="lollipop"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            >
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <com.thxy.common.widget.media.GalleryView
+        android:id="@+id/galleryView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:minHeight="@dimen/len_92"
+        android:padding="1dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    </com.thxy.common.widget.media.GalleryView>
+
+</android.support.design.widget.CoordinatorLayout>

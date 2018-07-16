@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prompt_empty">这里什么也没有…</string>
+    <string name="prompt_error">网络出了点问题…</string>
+    <string name="prompt_loading">正在加载啦…</string>
+</resources>

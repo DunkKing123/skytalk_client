@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<group
+    android:id="@+id/group1"
+    android:checkableBehavior="none">
+    <item
+        android:id="@+id/nav_clear_cache"
+        android:icon="@drawable/ic_clear_cache"
+        android:title="@string/action_clear_cache" />
+</group>
+    <group
+        android:id="@+id/group2"
+        android:checkableBehavior="none">
+    <item
+        android:id="@+id/nav_exit_account"
+        android:icon="@drawable/ic_change"
+        android:title="@string/action_exit_account" />
+    </group>
+    <group
+        android:id="@+id/group3"
+        android:checkableBehavior="none">
+    <item
+        android:id="@+id/nav_exit_app"
+        android:icon="@drawable/ic_exit_to_app"
+        android:title="@string/action_exit_app" />
+    </group>
+</menu>

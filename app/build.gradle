@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("aaa"))
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+    defaultConfig {
+        applicationId "com.thxy.skytalk"
+        minSdkVersion 19
+        //noinspection OldTargetApi
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //个推相关参数
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "pXoasEloSm8Y5qBIFk3vVA",
+                GETUI_APP_KEY   : "rcx54RZihd664OedMHobq2",
+                GETUI_APP_SECRET: "qjUwt2N9gV98JEufk8cUa6",
+                PACKAGE_NAME    : applicationId
+        ]
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+        release {
+            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
+            storePassword '123456'
+            keyAlias 'key0'
+            keyPassword '123456'
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //修改apk输出filename
+            android.applicationVariants.all { variant ->
+                variant.outputs.all {output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        /*// 输出apk名称为渠道号_v版本号.apk
+                        outputFileName = "${variant.productFlavors[0].name}_v${defaultConfig.versionName}.apk"*/
+                        // 输出apk名称为sk_v版本号_时间_渠道.apk
+                        outputFileName = "sk_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                    }
+
+                }
+            }
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    //多渠道打包
+    flavorDimensions "default"
+    productFlavors {
+        channel_1 {
+            manifestPlaceholders = [CHANNEL_VALUE: 1]
+        }
+        channel_2 {
+            manifestPlaceholders = [CHANNEL_VALUE: 2]
+        }
+        channel_3 {
+            manifestPlaceholders = [CHANNEL_VALUE: 3]
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //noinspection GradleDependency,GradleCompatible
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    //noinspection GradleDependency
+    compile "com.android.support:design:$rootProject.ext.supportVersion"
+    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    compile "com.yalantis:ucrop:$rootProject.ext.ucropVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    compile "pub.devrel:easypermissions:$rootProject.ext.easyPMVersion"
+    compile "com.getui:sdk:$rootProject.ext.getuiVersion"
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+    compile "com.scwang.smartrefresh:SmartRefreshLayout:$rootProject.ext.smartRefreshLayoutVersion"
+    compile 'com.bartoszlipinski.recyclerviewheader:library:1.2.0'
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${rootProject.ext.dbflowVersion}"
+    compile "com.github.Raizlabs.DBFlow:dbflow-core:${rootProject.ext.dbflowVersion}"
+    compile "com.github.Raizlabs.DBFlow:dbflow:${rootProject.ext.dbflowVersion}"
+    compile "com.aliyun.dpa:oss-android-sdk:$rootProject.ext.ossVersion"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.google.code.gson:gson:$rootProject.ext.gsonVersion"
+    compile project(':common')
+    //compile project(':factory')
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    //noinspection GradleDynamicVersion
+    compile 'com.android.support:support-v4:26.+'
+    testCompile 'junit:junit:4.12'
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/action_only_follows"
+            android:title="@string/action_only_follows" />
+        <item
+            android:id="@+id/action_only_friends"
+            android:title="@string/action_only_friends" />
+        <item
+            android:id="@+id/action_all"
+            android:title="@string/action_all" />
+
+</menu>

@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">skytalk_client</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!--底部Tab-->
+    <string name="action_interaction">互动</string>
+    <string name="action_active">动态</string>
+    <string name="action_contacts">通讯录</string>
+
+    <!--侧边栏-->
+    <string name="action_home">首页</string>
+    <string name="action_active_me">我的动态</string>
+    <string name="action_lot_review">有缘回顾</string>
+    <string name="action_settings">设置中心</string>
+
+    <string name="action_communicate">分享与交流</string>
+    <string name="action_share">分享推荐</string>
+    <string name="action_send">意见反馈</string>
+
+    <!--动态筛选-->
+    <string name="action_only_friends">仅好友</string>
+    <string name="action_all">所有人</string>
+    <string name="action_only_follows">仅关注</string>
+
+    <string name="action_clear_cache">清除缓存</string>
+    <string name="action_exit_account">切换账号</string>
+    <string name="action_exit_app">退出应用</string>
+
+    <string name="action_search">搜索</string>
+    <string name="action_search_view">搜索</string>
+    <string name="action_chat">发消息</string>
+
+    <string name="action_focus">关注</string>
+    <string name="action_group">群</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="already_focus">已关注</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_chat_user_info">用户信息</string>
+    <string name="administrator">0f58dbe5-3cc6-474f-84ec-7dae3000eae5</string>
+
+</resources>

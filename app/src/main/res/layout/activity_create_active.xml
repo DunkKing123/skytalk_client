@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowsBackground"
+    android:orientation="vertical"
+    tools:context="com.thxy.skytalk_client.activity.CreateActiveActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
+        android:paddingTop="@dimen/Toolbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:elevation="0dp"
+        tools:targetApi="lollipop">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/back_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/title_active"
+                style="@style/TextAppearance.AppCompat.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="@dimen/font_18" />
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_edit_title"
+        android:padding="@dimen/len_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_title"
+            android:tint="@color/colorPrimary"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_flag"
+            android:layout_margin="@dimen/len_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_toEndOf="@id/iv_title"
+            android:id="@+id/title_active_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="动态标题"
+            android:maxLength="16"
+            android:maxLines="1"
+            android:padding="@dimen/len_8"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/font_16" />
+
+        <TextView
+            android:id="@+id/tv_title_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/len_8"
+            android:text="16" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_300" />
+
+    <RelativeLayout
+        android:padding="@dimen/len_8"
+        android:id="@+id/rl_edit_desc"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:tint="@color/colorPrimary"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ic_edit"
+            android:layout_margin="@dimen/len_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_toEndOf="@id/iv_edit"
+            android:background="@null"
+            android:id="@+id/tv_desc_active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="动态描述"
+            android:maxHeight="200dp"
+            android:maxLength="160"
+            android:padding="@dimen/len_8"
+            android:textColor="@color/textPrimary"
+            android:textSize="@dimen/font_16" />
+
+        <TextView
+            android:id="@+id/tv_desc_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="@dimen/len_8"
+            android:text="160" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_300" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/len_8">
+
+        <ImageButton
+            android:id="@+id/iv_emoji_active"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_margin="@dimen/len_8"
+            android:background="@color/windowsBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_emoji"
+            android:tint="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/iv_photo_active_add"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_margin="@dimen/len_8"
+            android:background="@color/windowsBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_image"
+            android:tint="@color/colorPrimary" />
+
+        <!--<android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/send_active"
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/sel_send"
+            android:tint="@color/colorPrimary" />-->
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/grey_300" />
+
+    <ImageView
+        android:id="@+id/iv_photo_active"
+        android:layout_width="@dimen/len_128"
+        android:layout_height="@dimen/len_128"
+        android:layout_margin="@dimen/len_16"
+        android:src="@color/grey_200" />
+
+</LinearLayout>

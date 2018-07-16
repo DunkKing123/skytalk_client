@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="label_phone">手机号</string>
+    <string name="label_password">密码</string>
+    <string name="label_login">登录</string>
+    <string name="label_password_forget">忘记密码？</string>
+    <string name="label_go_register">新用户注册</string>
+    <string name="label_register">注册</string>
+    <string name="label_go_login">已有账号，前往登录</string>
+    <string name="label_password_confirm">确认密码</string>
+    <string name="label_gallery_select_max_size">至多选择%s张</string>
+    <string name="label_gallery_selected_size">已选%s张</string>
+    <string name="label_name">昵称</string>
+    <string name="label_name_group">群名称</string>
+    <string name="label_desc">描述</string>
+    <string name="label_desc_group">群描述</string>
+    <string name="label_complete">完成</string>
+    <string name="label_edit_por_sex">点击编辑头像和性别</string>
+    <string name="label_edit_group_icon">点击编辑群图标</string>
+
+</resources>

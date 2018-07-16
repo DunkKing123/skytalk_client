@@ -1,0 +1,49 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    compile "com.android.support:design:$rootProject.ext.supportVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
+    compile 'com.bartoszlipinski.recyclerviewheader:library:1.2.0'
+    compile "net.qiujuer.genius:kit-handler:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:ui:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:res:$rootProject.ext.geniusVersion"
+    compile "net.qiujuer.genius:kit-reflect:$rootProject.ext.geniusVersion"
+
+    compile "de.hdodenhof:circleimageview:$rootProject.ext.circleimageviewVersion"
+
+    compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+
+    compile "pub.devrel:easypermissions:$rootProject.ext.easyPMVersion"
+
+    compile 'com.android.support:support-v4:26.+'
+    testCompile 'junit:junit:4.12'
+}

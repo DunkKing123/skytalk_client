@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Genius style -->
+        <item name="gTextViewStyle">@style/Genius.Widget.TextView</item>
+        <item name="gButtonStyle">@style/Genius.Widget.Button</item>
+        <item name="gFloatActionButtonStyle">@style/Genius.Widget.FloatActionButton</item>
+        <item name="gSeekBarStyle">@style/Genius.Widget.SeekBar</item>
+        <item name="gCheckBoxStyle">@style/Genius.Widget.CompoundButton.CheckBox</item>
+        <item name="gEditTextStyle">@style/Genius.Widget.EditText</item>
+        <item name="gLoadingStyle">@style/Genius.Widget.Loading</item>
+        <item name="gImageViewStyle">@style/Genius.Widget.ImageView</item>
+
+        <!--背景色-->
+        <item name="android:windowBackground">@color/windowsBackground</item>
+
+        <!--ToolBar高度-->
+        <item name="actionBarSize">@dimen/len_48</item>
+        <!-- 左上角返回Icon -->
+        <item name="homeAsUpIndicator">@drawable/ic_back</item>
+
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
+        <!--去除顶部的状态栏-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowFrame">@null</item>
+    </style>
+
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
+
+    <style name="AppTheme.Account" parent="AppTheme.TransStatusBar" />
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:elevation">0dp</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

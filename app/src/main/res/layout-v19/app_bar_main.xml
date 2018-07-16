@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.thxy.skytalk_client.activity.MainActivity">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/actionBarWithStatusBarSize"
+            android:fitsSystemWindows="true"
+            android:paddingTop="@dimen/Toolbar_padding_top"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp"
+            tools:targetApi="lollipop">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/app_name"
+                    android:textSize="@dimen/font_18" />
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.AppBarLayout>
+
+        <include layout="@layout/content_main" />
+
+    <com.thxy.skytalk_client.widget.SmartBottomNavigationView
+        android:id="@+id/bottom_nav_interaction"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_56"
+        android:background="@color/grey_100"
+        android:elevation="@dimen/len_8"
+        android:outlineProvider="paddedBounds"
+        android:translationZ="@dimen/len_8"
+        app:itemIconTint="@color/tab_selector"
+        app:itemTextColor="@color/tab_selector"
+        app:menu="@menu/tab_bottom"
+        tools:targetApi="lollipop">
+    </com.thxy.skytalk_client.widget.SmartBottomNavigationView>
+</LinearLayout>
