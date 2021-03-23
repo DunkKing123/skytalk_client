@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
-def releaseTime() {
-    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("aaa"))
-}
+//def releaseTime() {
+//    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("aaa"))
+//}
 
 android {
     compileSdkVersion 26
@@ -32,43 +32,43 @@ android {
         }
     }
 
-    signingConfigs {
-        debug {
-            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
-            storePassword '123456'
-            keyAlias 'key0'
-            keyPassword '123456'
-        }
-        release {
-            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
-            storePassword '123456'
-            keyAlias 'key0'
-            keyPassword '123456'
-        }
-    }
+//    signingConfigs {
+//        debug {
+//            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
+//            storePassword '123456'
+//            keyAlias 'key0'
+//            keyPassword '123456'
+//        }
+//        release {
+//            storeFile file('D:/MyCode/sk4-26/skytalk_client/sky_talk.jks')
+//            storePassword '123456'
+//            keyAlias 'key0'
+//            keyPassword '123456'
+//        }
+//    }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
+//            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             //修改apk输出filename
-            android.applicationVariants.all { variant ->
-                variant.outputs.all {output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        /*// 输出apk名称为渠道号_v版本号.apk
-                        outputFileName = "${variant.productFlavors[0].name}_v${defaultConfig.versionName}.apk"*/
-                        // 输出apk名称为sk_v版本号_时间_渠道.apk
-                        outputFileName = "sk_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
-                    }
-
-                }
-            }
+//            android.applicationVariants.all { variant ->
+//                variant.outputs.all {output ->
+//                    def outputFile = output.outputFile
+//                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+//                        /*// 输出apk名称为渠道号_v版本号.apk
+//                        outputFileName = "${variant.productFlavors[0].name}_v${defaultConfig.versionName}.apk"*/
+//                        // 输出apk名称为sk_v版本号_时间_渠道.apk
+//                        outputFileName = "sk_v${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+//                    }
+//
+//                }
+//            }
         }
-        debug {
-            signingConfig signingConfigs.debug
-        }
+//        debug {
+//            signingConfig signingConfigs.debug
+//        }
     }
     lintOptions {
         abortOnError false
